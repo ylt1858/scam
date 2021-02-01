@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="scam.dao.MatchMapper">
+    <!--    <mapper namespace="com.example.demo.DAO.UserMapper">-->
+
+    <!--    <resultMap id="BaseResultMap" type="com.example.demo.pojo.User">-->
+    <!--        <result column="id"       jdbcType="INTEGER" property="id" />-->
+    <!--        <result column="name"     jdbcType="VARCHAR" property="name" />-->
+    <!--        <result column="password" jdbcType="VARCHAR" property="password" />-->
+    <!--    </resultMap>-->
+
+    <select id="getMatch" resultType = "scam.pojo.match">
+        select * from matchs where name = #{neme}
+    </select>
+    <select id="matchList" resultType = "scam.pojo.match">
+        select * from matchs
+    </select>
+    <delete id="deleteMatch" parameterType = "scam.pojo.match">
+        delete from matchs where name = #{name}
+    </delete>
+
+    <insert id="addMatch" parameterType = "scam.pojo.match">
+        insert into matchs (times,raceName,organizer,profession,rank,category)
+                    values (#{times},#{raceName},#{organizer},#{profession},#{rank},#{category})
+    </insert>
+
+    <update id="updateMatch" parameterType = "scam.pojo.match">
+        update student set year=#{year},organizer=#{organizer}
+    </update>
+
+</mapper>

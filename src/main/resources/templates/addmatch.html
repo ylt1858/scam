@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>addMatch</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script>
+        function validateFeeling(input) {
+            if (input.value == " ") {
+                input.setCustomValidity('此项为必填');
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+<center><h1 >添加Match</h1></center>
+<center>
+    <form action="/addMatch" method="post">
+    <br>
+    <p style="color:red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+    <input oninput="validateFeeling(this)" required="required" type="text" name="times" class="tl-price-input" placeholder="年份(格式：'yyyy-mm-dd)')"><br>
+    <input oninput="validateFeeling(this)" required="required" type="text" name="raceName" class="tl-price-input" placeholder="名称"><br>
+    <input oninput="validateFeeling(this)" required="required" type="text" name="organizer" class="tl-price-input" placeholder="主办单位"><br>
+    <input oninput="validateFeeling(this)" required="required" type="text" name="profession" class="tl-price-input" placeholder="所属专业"><br>
+    <input oninput="validateFeeling(this)" required="required" type="text" name="rank" class="tl-price-input" placeholder="级别(1:国际级2:国家级3:省会级)"><br>
+    <input oninput="validateFeeling(this)" required="required" type="text" name="category" class="tl-price-input" placeholder="类别(1：政府类 0：学会类)"><br>
+    <input oninput="validateFeeling(this)" type="submit" name="登录" style="color:blue" class="ant-btn-primary">
+    </form>
+</center>
+<!--<center>-->
+<!--<a th:href="@{/addStudent}" style=""><button class="ant-btn ant-btn-red">添加</button></a>-->
+<!--</center>-->
+</body>
+</html>
