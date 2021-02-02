@@ -24,7 +24,8 @@
     </insert>
 
     <update id="updateMatch" parameterType = "scam.pojo.match">
-        update student set year=#{year},organizer=#{organizer}
+        update matchs set `times`=#{times,jdbcType = DATE},`organizer`=#{organizer},`profession`=#{profession},`rank`=#{rank},`category`=#{category}
+        where `raceName` = #{raceName}
     </update>
 
 </mapper>

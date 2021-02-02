@@ -36,7 +36,7 @@
         </div>
 <!--        <h3 th:each="user:${users}" th:text="${user}"></h3>-->
         <td>
-            <a th:href="@{/update_match}">
+            <a th:href="@{/update_match(times=${match.getTimes()} , raceName = ${match.getRaceName()} , organizer = ${match.getOrganizer()} , profession = ${match.getProfession()} , rank = ${match.getRank()} , category = ${match.getCategory()})}">
                 <button class="ant-btn ant-btn-primary">修改</button>
             </a>
 <!--    <a th:href="@{/showAllUser(page=${usersPage.totalPages})}" role="button">末页</a>        -->

@@ -39,8 +39,36 @@ public class MatchController {
             @PathParam("category") int category
     ){
         match match = new match(times, raceName, organizer, profession, rank, category);
-        System.out.println(match.toString());
         matchMapper.addMatch(match);
+        return "redirect:/matchTable";
+    }
+
+    @RequestMapping("/update_match")
+    public String updateMatchTransit(
+            @PathParam("times") Date times,
+            @PathParam("raceName") String raceName,
+            @PathParam("organizer") String organizer,
+            @PathParam("profession") String profession,
+            @PathParam("rank") int rank,
+            @PathParam("category") int category,
+            Model model
+    ){
+        match match = new match(times, raceName, organizer, profession, rank, category);
+        model.addAttribute("match",match);
+        return "updatematch";
+    }
+
+    @RequestMapping("/updateMatch")
+    public String updateMatch(
+            @PathParam("times") Date times,
+            @PathParam("raceName") String raceName,
+            @PathParam("organizer") String organizer,
+            @PathParam("profession") String profession,
+            @PathParam("rank") int rank,
+            @PathParam("category") int category
+    ){
+        match match = new match(times, raceName, organizer, profession, rank, category);
+        matchMapper.updateMatch(match);
         return "redirect:/matchTable";
     }
 }

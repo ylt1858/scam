@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>main</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script>
+        function validateFeeling(input) {
+            if (input.value == " ") {
+                input.setCustomValidity('此项为必填');
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+<center><h1 >修改Match</h1></center>
+<center>
+    <form action="/updateMatch" method="post">
+        <br>
+        <p style="color:red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+        <input oninput="validateFeeling(this)" required="required" type="text" name="times" class="tl-price-input" placeholder="年度" th:value="${match.getTimes()}" readonly><br>
+        <input oninput="validateFeeling(this)" required="required" type="text" name="raceName" class="tl-price-input" placeholder="名称" th:value="${match.getRaceName()}"><br>
+        <input oninput="validateFeeling(this)" required="required" type="text" name="organizer" class="tl-price-input" placeholder="主办单位" th:value="${match.getOrganizer()}"><br>
+        <input oninput="validateFeeling(this)" required="required" type="text" name="profession" class="tl-price-input" placeholder="所属专业" th:value="${match.getProfession()}"><br>
+        <div >
+            <input oninput="validateFeeling(this)" required="required" type="text" name="rank" class="tl-price-input" placeholder="级别(1:国际级2:国家级3:省会级)" th:value="1" th:if="${match.getRank()}==1">
+            <input oninput="validateFeeling(this)" required="required" type="text" name="rank" class="tl-price-input" placeholder="级别(1:国际级2:国家级3:省会级)" th:value="2" th:if="${match.getRank()}==2">
+            <input oninput="validateFeeling(this)" required="required" type="text" name="rank" class="tl-price-input" placeholder="级别(1:国际级2:国家级3:省会级)" th:value="3" th:if="${match.getRank()}==3">
+        </div>
+        <div>
+            <input oninput="validateFeeling(this)" required="required" type="text" name="category" class="tl-price-input" placeholder="类别(1：政府类 0：学会类)" th:value="1" th:if="${match.getCategory()}==1">
+            <input oninput="validateFeeling(this)" required="required" type="text" name="category" class="tl-price-input" placeholder="类别(1：政府类 0：学会类)" th:value="0" th:if="${match.getCategory()}==0">
+        </div><br>
+        <input oninput="validateFeeling(this)" type="submit" name="提交" style="color:blue" class="ant-btn-primary">
+    </form>
+</center>
+<!--<center>-->
+<!--<a th:href="@{/addStudent}" style=""><button class="ant-btn ant-btn-red">添加</button></a>-->
+<!--</center>-->
+</body>
+</html>
