@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>main</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script>
+        function validateFeeling(input) {
+            if (input.value == " ") {
+                input.setCustomValidity('此项为必填');
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+<center><h1 >修改Apply</h1></center>
+<center>
+    <form action="/updateApply" method="post">
+    <br>
+    <p style="color:red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+    <input oninput="validateFeeling(this)" required="required" type="text" name="eventName" class="tl-price-input" placeholder="赛事名称" th:value="${apply.getEventName()}" readonly><br>
+    <input oninput="validateFeeling(this)" required="required" type="text" name="teamName" class="tl-price-input" placeholder="队伍名称" th:value="${apply.getTeamName()}"><br>
+    <input oninput="validateFeeling(this)" required="required" type="text" name="teamNumber" class="tl-price-input" placeholder="队伍编号" th:value="${apply.getTeamNumber()}"><br>
+    <input oninput="validateFeeling(this)" required="required" type="text" name="sno" class="tl-price-input" placeholder="学号" th:value="${apply.getSno()}" readonly><br>
+    <input oninput="validateFeeling(this)" required="required" type="text" name="tno" class="tl-price-input" placeholder="导师编号" th:value="${apply.getTno()}"><br>
+    <input oninput="validateFeeling(this)" type="submit" name="提交" style="color:blue" class="ant-btn-primary">
+    </form>
+</center>
+<!--<center>-->
+<!--<a th:href="@{/addStudent}" style=""><button class="ant-btn ant-btn-red">添加</button></a>-->
+<!--</center>-->
+</body>
+</html>

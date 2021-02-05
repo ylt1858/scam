@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="scam.dao.applyMapper">
+    <!--    <mapper namespace="com.example.demo.DAO.UserMapper">-->
+
+    <!--    <resultMap id="BaseResultMap" type="com.example.demo.pojo.User">-->
+    <!--        <result column="id"       jdbcType="INTEGER" property="id" />-->
+    <!--        <result column="name"     jdbcType="VARCHAR" property="name" />-->
+    <!--        <result column="password" jdbcType="VARCHAR" property="password" />-->
+    <!--    </resultMap>-->
+
+    <select id="getApply" resultType = "scam.pojo.apply">
+        select * from apply where eventName = #{eventName} and sno=#{sno} and tno=#{tno}
+    </select>
+    <select id="applyList" resultType = "scam.pojo.apply">
+        select * from apply
+    </select>
+    <delete id="deleteApply" parameterType = "scam.pojo.apply">
+        delete from apply where eventName = #{eventName} and sno=#{sno} and tno=#{tno}
+    </delete>
+
+    <insert id="addApply" parameterType = "scam.pojo.apply">
+        insert into apply (`eventName`,`teamNumber`,`teamName`,`tno`,`sno`) values (#{eventName},#{teamNumber},#{teamName},#{tno},#{sno})
+    </insert>
+
+    <update id="updateApply" parameterType = "scam.pojo.apply">
+        update apply set `teamName`=#{teamName},`teamNumber`=#{teamNumber},tno=#{tno} where eventName = #{eventName} and sno=#{sno}
+    </update>
+
+</mapper>
