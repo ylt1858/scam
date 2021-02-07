@@ -25,7 +25,7 @@
         <td width="200" height="50" th:text="${aw.getTotal()}"></td>
         <!--        <h3 th:each="user:${users}" th:text="${user}"></h3>-->
         <td>
-            <a th:href="@{/update_apply}">
+            <a th:href="@{/update_awardwinning(id=${aw.getId()})}">
                 <button class="ant-btn ant-btn-primary">修改</button>
             </a>
             <!--    <a th:href="@{/showAllUser(page=${usersPage.totalPages})}" role="button">末页</a>        -->
@@ -34,7 +34,7 @@
     </tr>
 </table>
 <center>
-    <a href="/addapply.html"><button class="ant-btn ant-btn-primary">新增</button></a>
+    <a href="/addawardwinning"><button class="ant-btn ant-btn-primary">新增</button></a>
     <!--    按钮跳转方法
             input type="button" value="我是一个按钮"
             οnclick="javascrtpt:window.location.href='http://blog.sina.com.cn/mleavs'">
