@@ -47,7 +47,7 @@ public class StudentController {
         return "updatestudent";
     }
 
-    @RequestMapping({"/StudentTable","/"})
+    @RequestMapping({"/StudentTable"})
     public String StudentTable(Model model){
         List<student> students = studentMapper.queryStudentList();
         model.addAttribute("students",students);

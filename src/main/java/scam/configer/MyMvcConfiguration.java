@@ -20,7 +20,7 @@ public class MyMvcConfiguration implements WebMvcConfigurer {
     /*视图跳转*/
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-//        registry.addViewController("/").setViewName("student");
+        registry.addViewController("/").setViewName("index");
         registry.addViewController("/student").setViewName("student");
         registry.addViewController("/teacher").setViewName("teacher");
         registry.addViewController("/style.css").setViewName("style.css");
