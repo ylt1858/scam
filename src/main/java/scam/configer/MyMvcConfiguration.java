@@ -25,7 +25,10 @@ public class MyMvcConfiguration implements WebMvcConfigurer {
         registry.addViewController("/addmatch.html").setViewName("addmatch");
         registry.addViewController("/addapply.html").setViewName("addapply");
         registry.addViewController("/admin/login").setViewName("login");
-        registry.addViewController("/index").setViewName("index");
     }
 
+//    @Override
+//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+//        registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
+//    }
 }
