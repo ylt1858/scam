@@ -18,6 +18,20 @@
     </properties>
 
     <dependencies>
+
+        <!--引入jQuery的webjar-->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>3.3.1</version>
+        </dependency>
+        <!--引入bootstrap-->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
@@ -29,11 +43,7 @@
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>2.1.1</version>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>com.github.liulus</groupId>-->
-        <!--            <artifactId>lit-mybatis-spring-boot-starter</artifactId>-->
-        <!--            <version>2.1</version>-->
-        <!--        </dependency>-->
+
         <!--druid连接池        -->
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -55,7 +65,7 @@
             <artifactId>lombok</artifactId>
         </dependency>
 
-        <!--        spring 启动器-->
+        <!-- thymeleaf依赖       -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>

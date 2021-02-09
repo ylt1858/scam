@@ -18,7 +18,7 @@ public class LoginHandlerIntercepter implements HandlerInterceptor {
         //没有登录
         if (loginUsername  == null ){
             request.setAttribute("msg","没有登录请先登录");
-            request.getRequestDispatcher("/index.html").forward(request,response);
+            request.getRequestDispatcher("/admin/login").forward(request,response);
             return false;
         }else {
             return true;
