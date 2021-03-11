@@ -15,26 +15,29 @@ public interface InstructorMapper {
 
     /**
      * 查找指导老师
+     * @param tno
      * @return
      */
-    instructor getInstructor();
+    instructor getInstructor(String tno, int teamNumber);
 
     /**
      * 添加指导老师
      * @return
      */
-    int addInstructor();
+    int addInstructor(instructor instructor);
 
     /**
      * 删除指导老师
+     * @param tno
      * @return
      */
     int deleteInstructor(String tno);
 
     /**
-     * 修改指导老师
+     * 更新指导老师
+     * @param instructor
      * @return
      */
-    int updateInstructor();
+    int updateInstructor(instructor instructor);
 
 }

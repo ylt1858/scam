@@ -12,9 +12,11 @@
     <select id="queryStudentBySno" resultType="scam.pojo.student">
         select * from user where sno = #{sno}
     </select>
+
     <select id="queryStudentList" resultType="scam.pojo.student">
         select * from student
     </select>
+
     <delete id="deleteStudent" parameterType="scam.pojo.student">
         delete from student where sno=#{sno}
     </delete>

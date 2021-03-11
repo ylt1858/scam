@@ -12,20 +12,21 @@
     <select id="instructorList" resultType="scam.pojo.instructor">
         select * from instructor
     </select>
-    <select id="getInstructor" >
-        select * from student
+
+    <select id="getInstructor" resultType="scam.pojo.instructor">
+        select * from instructor where tno = #{tno}and teamNumber = #{teamNumber}
     </select>
+
     <delete id="deleteInstructor" parameterType="scam.pojo.instructor">
         delete from instructor where tno=#{tno}
     </delete>
 
-    <insert id="addInstructor">
-
+    <insert id="addInstructor" >
+        insert into instructor(tno, teamNumber, grade) values (#{tno}, #{teamNumber}, #{grade})
     </insert>
 
-    <update id="updateInstructor" >
-        update student set s_name=#{s_name},grade=#{grade},s_class=#{s_class},ID_card=#{ID_card},Bank_card=#{Bank_card},team=#{team}
-        where sno=#{sno}
+    <update id="updateInstructor" parameterType="scam.pojo.instructor">
+        update instructor set  grade = #{grade} where tno = #{tno} and teamNumber = #{teamNumber}
     </update>
 
 </mapper>
