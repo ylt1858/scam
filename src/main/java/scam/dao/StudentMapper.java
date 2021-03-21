@@ -23,7 +23,7 @@ public interface StudentMapper {
      * @param sno
      * @return
      */
-    student queryStudentBySno(int sno);
+    student queryStudentBySno(String sno);
 
     /**
      * 添加学生

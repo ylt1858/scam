@@ -47,6 +47,11 @@ class applyMapperTest {
     }
 
     @Test
+    @Transactional
     void updateApply() {
+        int test_team = applyMapper.updateApply(new apply("2020数学竞赛", 1,
+                "test_team", "2001", "1001"));
+        System.err.println(test_team  + "更新成功！");
+        assertTrue(test_team > 0);
     }
 }
