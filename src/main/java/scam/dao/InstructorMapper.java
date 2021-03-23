@@ -5,6 +5,9 @@ import scam.pojo.instructor;
 
 import java.util.List;
 
+/**
+ * @author y'l'l
+ */
 @Repository
 public interface InstructorMapper {
     /**

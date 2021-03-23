@@ -10,7 +10,7 @@
     <!--    </resultMap>-->
 
     <select id="getMatch" resultType = "scam.pojo.match">
-        select * from matchs where name = #{neme}
+        select * from matchs where raceName = #{raceName}
     </select>
     <select id="matchList" resultType = "scam.pojo.match">
         select * from matchs
