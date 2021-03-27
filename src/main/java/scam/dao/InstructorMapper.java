@@ -32,9 +32,10 @@ public interface InstructorMapper {
     /**
      * 删除指导老师
      * @param tno
+     * @param teamNumber
      * @return
      */
-    int deleteInstructor(String tno);
+    int deleteInstructor(String tno,Integer teamNumber);
 
     /**
      * 更新指导老师

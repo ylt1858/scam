@@ -14,11 +14,11 @@
     </select>
 
     <select id="getInstructor" resultType="scam.pojo.instructor">
-        select * from instructor where tno = #{tno}and teamNumber = #{teamNumber}
+        select * from instructor where tno = #{tno} and teamNumber = #{teamNumber}
     </select>
 
     <delete id="deleteInstructor" parameterType="scam.pojo.instructor">
-        delete from instructor where tno=#{tno}
+        delete from instructor where tno=#{tno} and teamNumber = #{teamNumber}
     </delete>
 
     <insert id="addInstructor" >

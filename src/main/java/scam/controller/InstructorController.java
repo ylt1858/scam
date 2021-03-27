@@ -23,8 +23,8 @@ public class InstructorController {
     }
 
     @RequestMapping("/deleteInstructor")
-    public String deleteInstructor (@PathParam("tno") String tno){
-        instructorMapper.deleteInstructor(tno);
+    public String deleteInstructor (@PathParam("tno") String tno, @PathParam("id") int id){
+        instructorMapper.deleteInstructor(tno, id);
         return "redirect:/InstructorTable";
     }
 

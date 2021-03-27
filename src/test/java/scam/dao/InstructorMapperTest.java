@@ -33,21 +33,21 @@ class InstructorMapperTest {
     @Test
     @Transactional
     void addInstructor() {
-        int i = instructorMapper.addInstructor(new instructor("2003", 5, 1));
+        int i = instructorMapper.addInstructor(new instructor("2003", 4, 1));
         assertTrue(i > 0);
     }
 
     @Test
     @Transactional
     void deleteInstructor() {
-        int i = instructorMapper.deleteInstructor("2001");
+        int i = instructorMapper.deleteInstructor("2001",3);
         assertTrue(i > 0);
     }
 
     @Test
     @Transactional
     void updateInstructor() {
-        int i = instructorMapper.updateInstructor(new instructor("2001", 1, 3));
+        int i = instructorMapper.updateInstructor(new instructor("2001", 3, 3));
         assertTrue(i > 0);
     }
 }
