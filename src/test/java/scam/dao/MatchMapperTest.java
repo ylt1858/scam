@@ -41,7 +41,9 @@ class MatchMapperTest {
     @Test
     @Transactional
     void deleteMatch() {
-        int i = matchMapper.deleteMatch("test");
+        matchMapper.addMatch(new match(Date.valueOf(LocalDate.now()),"test-tests","test",
+                "test",1,1));
+        int i = matchMapper.deleteMatch("test-tests");
         assertTrue(i > 0);
     }
 
