@@ -34,7 +34,7 @@ public class applyController {
             @PathParam("sno") String sno,
             @PathParam("tno") String tno
     ){
-        applyMapper.deleteApply(eventName,sno,tno);
+        applyMapper.deleteApply(1);
         return "redirect:/applyTable";
     }
 
@@ -45,7 +45,7 @@ public class applyController {
             @PathParam("tno") String tno,
             Model model
     ){
-        apply apply = applyMapper.getApply(eventName, sno, tno);
+        apply apply = applyMapper.getApply(1);
         model.addAttribute("apply",apply);
         return "updateapply";
     }
@@ -54,11 +54,11 @@ public class applyController {
     public String updateApply(
             @PathParam("eventName") String eventName,
             @PathParam("sno") String sno,
-            @PathParam("tno") String tno,
+            @PathParam("id") Integer id,
             @PathParam("teamName") String teamName,
             @PathParam("teamNumber") Integer teamNumber
     ){
-        applyMapper.updateApply(new apply(eventName, teamNumber, teamName, tno, sno));
+        applyMapper.updateApply(new apply(eventName, teamNumber, teamName, sno, id));
         return "redirect:/applyTable";
     }
 
@@ -66,11 +66,11 @@ public class applyController {
     public String addApply(
             @PathParam("eventName") String eventName,
             @PathParam("sno") String sno,
-            @PathParam("tno") String tno,
+            @PathParam("tno") Integer id,
             @PathParam("teamName") String teamName,
             @PathParam("teamNumber") Integer teamNumber
     ){
-        applyMapper.addApply(new apply(eventName, teamNumber, teamName, tno, sno));
+        applyMapper.addApply(new apply(eventName, teamNumber, teamName, sno, id));
         return "redirect:/applyTable";
     }
 }

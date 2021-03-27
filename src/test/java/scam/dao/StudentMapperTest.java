@@ -52,7 +52,7 @@ class StudentMapperTest {
     @Test
     @Transactional
     void deleteStudent() {
-        studentMapper.addStudent(new student("1005", "test", 3, "班级",
+        studentMapper.addStudent(new student("11005", "test", 3, "班级",
                 "432622199911012586", "652651621654112321", "teamName"));
         int i = studentMapper.deleteStudent("1005");
         assertTrue(i > 0);

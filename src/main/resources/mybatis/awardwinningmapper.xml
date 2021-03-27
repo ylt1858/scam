@@ -20,11 +20,11 @@
     </delete>
 
     <insert id="addModel" parameterType = "scam.pojo.AwardWinning">
-        insert into awardwinning (`id`,`teamNumber`,`grade`,`total`) values (#{id},#{teamNumber},#{grade},#{total})
+        insert into awardwinning (`id`,`grade`,`total`) values (#{id},#{grade},#{total})
     </insert>
 
     <update id="updateModel">
-        update awardwinning set `teamNumber`=#{teamNumber},`grade`=#{grade},`total`=#{total} where `id`=#{id}
+        update awardwinning set `grade`=#{grade},`total`=#{total} where `id`=#{id}
     </update>
 
 </mapper>

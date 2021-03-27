@@ -41,14 +41,14 @@ class AwardWinningMapperTest {
     @Test
     @Transactional
     void addModel() {
-        int i = awardWinningMapper.addModel(new AwardWinning(3, 4, 2, 1000));
+        int i = awardWinningMapper.addModel(new AwardWinning(4,  2, 1000));
         assertTrue(i > 0);
     }
 
     @Test
     @Transactional
     void updateModel() {
-        int i = awardWinningMapper.updateModel(new AwardWinning(1, 1, 1, 10001));
+        int i = awardWinningMapper.updateModel(new AwardWinning(1,  1, 10001));
         assertTrue(i > 0);
     }
 }

@@ -10,21 +10,23 @@
     <!--    </resultMap>-->
 
     <select id="getApply" resultType = "scam.pojo.apply">
-        select * from apply where eventName = #{eventName} and sno=#{sno} and tno=#{tno}
+        select * from apply where id = #{id}
     </select>
     <select id="applyList" resultType = "scam.pojo.apply">
         select * from apply
     </select>
     <delete id="deleteApply" parameterType = "scam.pojo.apply">
-        delete from apply where eventName = #{eventName} and sno=#{sno} and tno=#{tno}
+        delete from apply where id = #{id}
     </delete>
 
     <insert id="addApply" parameterType = "scam.pojo.apply">
-        insert into apply (`eventName`,`teamNumber`,`teamName`,`tno`,`sno`) values (#{eventName},#{teamNumber},#{teamName},#{tno},#{sno})
+        insert into apply (`eventName`,`teamNumber`,`teamName`,`id`,`sno`)
+        values (#{eventName},#{teamNumber},#{teamName},#{id},#{sno})
     </insert>
 
     <update id="updateApply" parameterType = "scam.pojo.apply">
-        update apply set `teamName`=#{teamName},`teamNumber`=#{teamNumber},tno=#{tno} where eventName = #{eventName} and sno=#{sno}
+        update apply set `teamName`=#{teamName},`teamNumber`=#{teamNumber}
+        where eventName = #{eventName} and sno=#{sno} and id=#{id}
     </update>
 
 </mapper>

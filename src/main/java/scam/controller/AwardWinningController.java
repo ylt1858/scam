@@ -34,11 +34,10 @@ public class AwardWinningController {
     @RequestMapping("/addAwardWinning")
     public String addAwardWinning(
             @PathParam("id") int id,
-            @PathParam("teamNumber") int teamNumber,
             @PathParam("grade") int grade,
             @PathParam("total") int total
     ){
-        awardWinningMapper.addModel(new AwardWinning(id,teamNumber,grade,total));
+        awardWinningMapper.addModel(new AwardWinning(id,grade,total));
         return "redirect:/AWTable";
     }
 
@@ -60,11 +59,10 @@ public class AwardWinningController {
     @RequestMapping("/updateAwardWinning")
     public String updateAwardWinning(
             @PathParam("id") int id,
-            @PathParam("teamNumber") int teamNumber,
             @PathParam("grade") int grade,
             @PathParam("total") int total
     ){
-        awardWinningMapper.updateModel(new AwardWinning(id,teamNumber,grade,total));
+        awardWinningMapper.updateModel(new AwardWinning(id,grade,total));
         return "redirect:/AWTable";
     }
 }

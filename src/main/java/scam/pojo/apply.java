@@ -13,12 +13,12 @@ public class apply {
      * eventName varchar(255),
      * teamNumber int,
      * teamName varchar(20),
-     * tno varchar(20),
      * sno varchar(20),
+     * id  int
      */
     private String eventName;
     private Integer teamNumber;
     private String teamName;
-    private String tno;
     private String sno;
+    private Integer id;
 }

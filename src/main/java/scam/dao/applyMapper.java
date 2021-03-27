@@ -18,13 +18,11 @@ public interface applyMapper {
     List<apply> applyList();
 
     /**
-     * 通过主码查找
-     * @param eventName 赛事名称
-     * @param sno   学号
-     * @param tno   教师编号
+     * 通过id查找
+     * @param id id
      * @return
      */
-    apply getApply(String eventName, String sno ,String tno);
+    apply getApply(int id);
 
     /**
      * 添加报名
@@ -34,13 +32,11 @@ public interface applyMapper {
     int addApply(apply apply);
 
     /**
-     * 删除报名
-     * @param eventName
-     * @param sno
-     * @param tno
+     * 通过id删除
+     * @param id id
      * @return
      */
-    int deleteApply(String eventName, String sno ,String tno);
+    int deleteApply(int id);
 
     /**
      * 更新报名

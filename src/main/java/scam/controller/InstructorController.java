@@ -44,7 +44,11 @@ public class InstructorController {
     }
 
     @RequestMapping("/toUpdateInstructor")
-    public String toUpdateInstructor (Model model,@PathParam("tno") String tno, @PathParam("teamNumber") int teamNumber){
+    public String toUpdateInstructor (
+            Model model,
+            @PathParam("tno") String tno,
+            @PathParam("teamNumber") int teamNumber
+    ){
         instructor instructor = instructorMapper.getInstructor(tno,teamNumber);
         model.addAttribute("instructor", instructor);
         return "updateinstructor";

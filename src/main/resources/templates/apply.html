@@ -15,7 +15,7 @@
         <td width="200" height="50" >赛事名称</td>
         <td width="200" height="50" >队伍编号</td>
         <td width="200" height="50" >队伍名称</td>
-        <td width="200" height="50" >导师编号</td>
+        <td width="200" height="50" >id</td>
         <td width="200" height="50" >学号</td>
         <td width="200" height="50" >操作</td>
     </tr>
@@ -24,15 +24,15 @@
         <td width="200" height="50" th:text="${apply.getEventName()}"></td>
         <td width="200" height="50" th:text="${apply.getTeamNumber()}"></td>
         <td width="200" height="50" th:text="${apply.getTeamName()}"></td>
-        <td width="200" height="50" th:text="${apply.getTno()}"></td>
+        <td width="200" height="50" th:text="${apply.getId()}"></td>
         <td width="200" height="50" th:text="${apply.getSno()}"></td>
 <!--        <h3 th:each="user:${users}" th:text="${user}"></h3>-->
         <td>
-            <a th:href="@{/update_apply(eventName=${apply.getEventName()},sno=${apply.getSno()},tno=${apply.getTno()})}">
+            <a th:href="@{/update_apply(eventName=${apply.getEventName()},sno=${apply.getSno()},tno=${apply.getId()})}">
                 <button class="ant-btn ant-btn-primary">修改</button>
             </a>
 <!--    <a th:href="@{/showAllUser(page=${usersPage.totalPages})}" role="button">末页</a>        -->
-            <a th:href="@{/deleteApply(eventName=${apply.getEventName()},sno=${apply.getSno()},tno=${apply.getTno()})}">
+            <a th:href="@{/deleteApply(eventName=${apply.getEventName()},sno=${apply.getSno()},tno=${apply.getId()})}">
                 <button class="ant-btn ant-btn-red">删除</button>
             </a>
         </td>

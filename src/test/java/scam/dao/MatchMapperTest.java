@@ -33,7 +33,7 @@ class MatchMapperTest {
     @Test
     @Transactional
     void addMatch() {
-        int i = matchMapper.addMatch(new match(Date.valueOf(LocalDate.now()),"test","test",
+        int i = matchMapper.addMatch(new match(Date.valueOf(LocalDate.now()),"test-tests","test",
                 "test",1,1));
         assertTrue(i > 0);
     }
@@ -41,7 +41,7 @@ class MatchMapperTest {
     @Test
     @Transactional
     void deleteMatch() {
-        int i = matchMapper.deleteMatch("CSGO");
+        int i = matchMapper.deleteMatch("test");
         assertTrue(i > 0);
     }
 

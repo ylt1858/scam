@@ -25,7 +25,7 @@ class applyMapperTest {
 
     @Test
     void getApply() {
-        apply apply = applyMapper.getApply("2020数学竞赛", "1001", "2001");
+        apply apply = applyMapper.getApply(1);
         System.err.println(apply);
     }
 
@@ -33,7 +33,7 @@ class applyMapperTest {
     //回滚
     @Transactional
     void addApply() {
-        int i = applyMapper.addApply(new apply("2020数学竞赛", 6, "five_team","2003","1001"));
+        int i = applyMapper.addApply(new apply("2020数学竞赛", 6, "five_team","1001",100));
         System.err.println(i + "添加成功！");
         assertTrue(i > 0);
     }
@@ -41,7 +41,7 @@ class applyMapperTest {
     @Test
     @Transactional
     void deleteApply() {
-        int i = applyMapper.deleteApply("2020数学竞赛", "1001", "2001");
+        int i = applyMapper.deleteApply(1);
         System.err.println(i + "删除成功！");
         assertTrue(i > 0);
     }
@@ -50,7 +50,7 @@ class applyMapperTest {
     @Transactional
     void updateApply() {
         int test_team = applyMapper.updateApply(new apply("2020数学竞赛", 1,
-                "test_team", "2001", "1001"));
+                "test_team", "1001", 1));
         System.err.println(test_team  + "更新成功！");
         assertTrue(test_team > 0);
     }

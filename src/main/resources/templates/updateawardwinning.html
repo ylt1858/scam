@@ -20,7 +20,6 @@
     <br>
     <p style="color:red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
     <input oninput="validateFeeling(this)" required="required" type="text" name="id" class="tl-price-input" placeholder="id" th:value="${aw.getId()}" readonly><br>
-    <input oninput="validateFeeling(this)" required="required" type="text" name="teamNumber" class="tl-price-input" placeholder="队伍编号" th:value="${aw.getTeamNumber()}"><br>
     <input oninput="validateFeeling(this)" required="required" type="text" name="grade" class="tl-price-input" placeholder="获奖等级" th:value="${aw.getGrade()}"><br>
     <input oninput="validateFeeling(this)" required="required" type="text" name="total" class="tl-price-input" placeholder="获奖总额" th:value="${aw.getTotal()}"><br>
     <input oninput="validateFeeling(this)" type="submit" name="提交" style="color:blue" class="ant-btn-primary">
