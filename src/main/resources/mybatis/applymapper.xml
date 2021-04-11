@@ -29,4 +29,8 @@
         where eventName = #{eventName} and sno=#{sno} and id=#{id}
     </update>
 
+    <select id="queryStudentByApply" resultType="scam.pojo.student">
+        select * from student where sno in (select sno from apply  where id = #{id})
+    </select>
+
 </mapper>

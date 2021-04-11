@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 import scam.pojo.apply;
+import scam.pojo.student;
 
 import java.util.List;
 
@@ -53,5 +54,14 @@ class applyMapperTest {
                 "test_team", "1001", 1));
         System.err.println(test_team  + "更新成功！");
         assertTrue(test_team > 0);
+    }
+
+    @Test
+    @Transactional
+    void test1() {
+        List<student> students = applyMapper.queryStudentByApply(1);
+        for (student student : students) {
+            System.err.println(student);
+        }
     }
 }
